@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="Победитель"
+        android:layout_gravity="center|top|left"
+        android:textColor="#000"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/tv_result_winner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="60dp"
+        android:layout_gravity="center|top|left"
+        android:text="Игрок 1"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Колличество"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="150dp"
+        android:layout_gravity="center|top|right"
+        android:textColor="#000"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="34"
+        android:textSize="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="200dp"
+        android:layout_gravity="center|top|right"
+        android:textColor="#000"
+        android:textStyle="italic"/>
+
+
+</FrameLayout>

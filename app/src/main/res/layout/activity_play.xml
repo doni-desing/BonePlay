@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".play.PlayActivity">
+
+    <TextView
+        android:id="@+id/tv_result_player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="100dp" />
+    <TextView
+        android:id="@+id/tv_result_player1_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="230dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player1_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="260dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player1_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="290dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player1_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="320dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="100dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player2_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="230dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp" />
+    <TextView
+        android:id="@+id/tv_result_player2_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="260dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp" />
+
+    <TextView
+        android:id="@+id/tv_result_player2_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="290dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp" />
+    <TextView
+        android:id="@+id/tv_result_player2_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="320dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="150dp" />
+
+
+
+    <TextView
+        android:id="@+id/tv_payer_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_payer_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="100dp"
+        android:text="Результат игрока 1"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/tv_result1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="100dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="100dp"
+        android:text="Результат игрока 2"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/tv_result2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="100dp"
+        android:textColor="#000"/>
+
+    <com.iigo.library.DiceView
+        android:id="@+id/dice2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:borderColor="@color/black"
+        app:pointColor="@color/black" />
+
+    <com.iigo.library.DiceLoadingView
+        android:id="@+id/diceL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.iigo.library.DiceView
+        android:id="@+id/dice1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:number="one"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        app:borderColor="@color/black"
+        app:pointColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_play1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_btn1"
+        android:onClick="onClick1"
+        android:text="Игрок 1"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/btn_play2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_btn1"
+        android:onClick="onClick2"
+        android:text="Игрок 2"
+        android:textColor="#fff" />
+
+
+</FrameLayout>
