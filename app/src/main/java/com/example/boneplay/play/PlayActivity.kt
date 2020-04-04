@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.boneplay.R
 import com.example.boneplay.result.ResultActivity
@@ -74,44 +75,57 @@ class PlayActivity : AppCompatActivity() {
     }
 
     fun onClick1(view: View) {
-        Log.d("plpl", array.lastIndex.toString())
-try {
+        Log.d("plpl", " array1  "+ count)
+        Log.d("plpl", " array2  " +  array2.size)
 
-    if (array.get(count) == R.id.tv_result_player1) {
-        tvResult1!!.text = dice()
-        tv_result_player1.visibility = View.VISIBLE
-        tv_result_player1_2.visibility = View.VISIBLE
-    }
+        if (count  == array2.size) {
+            val intent = Intent(this, ResultActivity::class.java)
+            if (tv_result1.text.toString() > tv_result2.text.toString()) {
+                intent.putExtra("winner", tv_payer_name1.text.toString())
+                intent.putExtra("count", tv_result1.text.toString())
+            } else {
+                intent.putExtra("winner2", tv_payer_name2.text.toString())
+                intent.putExtra("count2", tv_result2.text.toString())
 
-    if (array.get(count) == R.id.tv_result_player1_2) {
-        tv_result_player1_2!!.text = dice()
-        tv_result_player1_3.visibility = View.VISIBLE
-    }
-    if (array.get(count) == R.id.tv_result_player1_3) {
-        tv_result_player1_3!!.text = dice()
-        tv_result_player1_4.visibility = View.VISIBLE
+            }
 
-    }
-    if (array.get(count) == R.id.tv_result_player1_4) {
-        tv_result_player1_4!!.text = dice()
-        tv_result_player1_5.visibility = View.VISIBLE
-    }
+            startActivity(intent)
+            btn_play2.visibility = View.GONE
 
-    if (array.get(count) == R.id.tv_result_player1_5) {
-        tv_result_player1_5!!.text = dice()
-    }
+        } else {
+            if (array.get(count) == R.id.tv_result_player1) {
+                tvResult1!!.text = dice()
+                tv_result_player1.visibility = View.VISIBLE
+                tv_result_player1_2.visibility = View.VISIBLE
+            }
 
-    showResultPlayer1()
+            if (array.get(count) == R.id.tv_result_player1_2) {
+                tv_result_player1_2!!.text = dice()
+                tv_result_player1_3.visibility = View.VISIBLE
+            }
+            if (array.get(count) == R.id.tv_result_player1_3) {
+                tv_result_player1_3!!.text = dice()
+                tv_result_player1_4.visibility = View.VISIBLE
 
-    btn_play1.visibility = View.INVISIBLE
-    btn_play2.visibility = View.VISIBLE
+            }
+            if (array.get(count) == R.id.tv_result_player1_4) {
+                tv_result_player1_4!!.text = dice()
+                tv_result_player1_5.visibility = View.VISIBLE
+            }
 
-    count++
-} catch (e: Exception){
-startActivity(Intent(this, ResultActivity::class.java))
-}
+            if (array.get(count) == R.id.tv_result_player1_5) {
+                tv_result_player1_5!!.text = dice()
+            }
+        }
 
-
+        showResultPlayer1()
+        btn_play1.visibility = View.INVISIBLE
+        if (count  == array2.size) {
+            btn_play1.visibility = View.VISIBLE
+        } else {
+            btn_play2.visibility = View.VISIBLE
+        }
+        count++
     }
 
     private fun showResultPlayer1() {
@@ -169,20 +183,16 @@ startActivity(Intent(this, ResultActivity::class.java))
 
         }
         try {
-            var tv22 = ""
-            var tv23 = ""
-            var tv24 = ""
-            var tv25 = ""
 
             val tv21: String = (tv_result_player2!!.text.toString())
 
-            tv22 = (tv_result_player2_2!!.text.toString())
+            val tv22 = (tv_result_player2_2!!.text.toString())
 
-            tv23 = (tv_result_player2_3!!.text.toString())
+            val tv23 = (tv_result_player2_3!!.text.toString())
 
-            tv24 = tv_result_player2_4!!.text.toString()
+            val tv24 = tv_result_player2_4!!.text.toString()
 
-            tv25 = tv_result_player2_5!!.text.toString()
+            val tv25 = tv_result_player2_5!!.text.toString()
 
             val q1 = Integer.parseInt(tv21)
             val w2 = Integer.parseInt(tv22)
@@ -192,12 +202,9 @@ startActivity(Intent(this, ResultActivity::class.java))
             val qwerty = q1.plus(w2).plus(e3).plus(r4).plus(t5)
             tv_result2.text = qwerty.toString()
         } catch (ex: Exception) {
-
         }
-
         btn_play2.visibility = View.INVISIBLE
         btn_play1.visibility = View.VISIBLE
-
     }
 
     private fun dice(): String {
@@ -211,5 +218,8 @@ startActivity(Intent(this, ResultActivity::class.java))
         val count = num1.plus(num2)
         return count.toString()
     }
-}
 
+    fun start(view: View) {
+        startActivity(Intent(this, ResultActivity::class.java))
+    }
+}

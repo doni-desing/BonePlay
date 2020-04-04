@@ -6,6 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "result_model")
 data class ResultModel(
     @PrimaryKey(autoGenerate = true)
-    var winder: Int,
-    var sum: Int
+    var id: Int? = null,
+    var winner: String,
+    var sum: String?
 )

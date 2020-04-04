@@ -1,15 +1,17 @@
 package com.example.boneplay.db
 
+import android.icu.text.Replaceable
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.boneplay.model.ResultModel
 @Dao
 interface RoomMethod {
-    @Insert
-    suspend fun insertResult(model: ResultModel)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertResult(list: ResultModel)
 
-    @Query("SELECT * FROM result_model")
-    suspend fun getResult(): List<ResultModel>
+    @Query("SELECT * FROM result_model WHERE id=:id")
+    suspend fun getResult(id: Int): List<ResultModel>
 
 }

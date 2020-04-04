@@ -13,16 +13,15 @@ class ResultViewModel : ViewModel() {
 
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
+    var db = App.dataBase
 
-    var db = App.instance.getResult()
-
-    suspend fun getResult(): List<ResultModel>? {
-        return db.saveResult().getResult()
+    suspend fun getResult(id: Int): List<ResultModel>? {
+        return db?.saveResult()?.getResult(id)
     }
 
-    fun insertResult(model: ResultModel) {
+    fun insertResult(list: ResultModel) {
         uiScope.launch {
-            db.saveResult().insertResult(model)
+            db?.saveResult()?.insertResult(list)
         }
     }
 }
