@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class ResultActivity : AppCompatActivity() {
     private var viewModel: ResultViewModel? = null
-    lateinit var adapter: ResultAdapter
+    private lateinit var adapter: ResultAdapter
     private var recyclerView: RecyclerView? = null
     private var winner: String? = null
     private var winner2: String? = null
@@ -42,11 +42,11 @@ class ResultActivity : AppCompatActivity() {
     }
     private fun subscribeToViewModel() {
         CoroutineScope(Dispatchers.Main).launch {
-            val model = viewModel?.getResult(id)
-            if (model != null) {
-                adapter.upDataAdapter(model)
-            } else {
+            val model = viewModel?.getResult()
+            if (winner != null || winner2 != null || model == null) {
                 updateDatabase()
+            } else if (model != null) {
+                adapter.upDataAdapter(model!!)
             }
         }
         id++
@@ -54,12 +54,12 @@ class ResultActivity : AppCompatActivity() {
 
     private fun updateDatabase() {
         if (count.isNullOrEmpty()) {
-            viewModel?.insertResult(ResultModel(id, winner2.toString(), count2))
-            adapter.addResult(ResultModel(id, winner2.toString(), count2))
+            viewModel?.insertResult(ResultModel( winner2.toString(), count2))
+            adapter.addResult(ResultModel( winner2.toString(), count2))
 
         } else {
-            viewModel?.insertResult(ResultModel(id, winner.toString(), count))
-            adapter.addResult(ResultModel(id, winner.toString(), count))
+            viewModel?.insertResult(ResultModel( winner.toString(), count))
+            adapter.addResult(ResultModel(winner.toString(), count))
 
         }
     }

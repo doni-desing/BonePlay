@@ -15,8 +15,8 @@ class ResultViewModel : ViewModel() {
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     var db = App.dataBase
 
-    suspend fun getResult(id: Int): List<ResultModel>? {
-        return db?.saveResult()?.getResult(id)
+    suspend fun getResult(): List<ResultModel>? {
+        return db?.saveResult()?.getResult()
     }
 
     fun insertResult(list: ResultModel) {

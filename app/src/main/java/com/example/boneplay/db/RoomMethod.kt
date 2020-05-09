@@ -11,7 +11,7 @@ interface RoomMethod {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertResult(list: ResultModel)
 
-    @Query("SELECT * FROM result_model WHERE id=:id")
-    suspend fun getResult(id: Int): List<ResultModel>
+    @Query("SELECT * FROM result_model")
+    suspend fun getResult(): List<ResultModel>
 
 }
